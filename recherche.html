@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width,initial-scale=1" name="viewport" />
+  <title>RUSTA - Recherche Globale</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
+  <link href="records.css" rel="stylesheet" /> </head>
+<body id="top">
+  <header>
+    <div class="title">RUSTA - Recherche Globale</div>
+    <nav>
+      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">
+        &larr; Retour page records du club
+      </a>
+    </nav>
+  </header>
+
+  <main id="content">
+    <div class="search-container">
+      <label for="global-search-input">Rechercher un nom, une épreuve ou une année :</label>
+      <div class="search-input-wrapper" style="display: flex; gap: 10px;">
+        <input class="input" id="global-search-input" placeholder="Ex: Poids, Dupont, 2025 ..." type="text" style="flex: 1;" />
+      </div>
+    </div>
+
+    <section class="active-section">
+      <h2>Résultats trouvés</h2>
+      <table id="records-table">
+        <thead>
+          <tr>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Genre</th>
+            <th scope="col">Epreuve</th>
+            <th scope="col">Nom Prénom</th>
+            <th scope="col">Résultat</th>
+            <th scope="col">Année</th>
+          </tr>
+        </thead>
+        <tbody id="results-tbody">
+          <tr>
+            <td colspan="6" style="text-align:center; padding: 40px; color: #666;">
+              Entrez un mot-clé ci-dessus pour lancer la recherche globale.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-text">&copy; 2025 RUSTA - Outil de recherche globale</p>
+  </footer>
+
+  <script src="global-search.js"></script>
+</body>
+</html>
