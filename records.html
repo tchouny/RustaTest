@@ -36,57 +36,61 @@
     </nav>
   </header>
 
-  <div class="search-container">
-    <div class="search-header">
-      <label for="search-input"
-        style="font-family: 'Inter', sans-serif; font-size: 14px; color: #1e3a8a; margin-bottom: 0;">
-        Rechercher dans la catégorie : <span id="current-category-name" style="font-weight: 800;"></span>
-      </label>
+  <main id="content">
+
+    <div class="search-container">
+      <div class="search-header">
+        <label for="search-input"
+          style="font-family: 'Inter', sans-serif; font-size: 14px; color: #1e3a8a; margin-bottom: 0;">
+          Rechercher dans la catégorie : <span id="current-category-name" style="font-weight: 800;"></span>
+        </label>
+        <span id="result-count" class="result-count" style="display:none;"></span>
+      </div>
+
+      <div class="search-input-wrapper">
+        <input class="input" id="search-input" placeholder="Tapez un nom, une épreuve ou un résultat… (ou appuyez sur /)" type="text" />
+        <button class="clear-search-button" id="clear-search-button" type="button" aria-label="Effacer la recherche"
+          style="display: none;">
+          &times;
+        </button>
+      </div>
+      <div>
+        <a href="recherche.html"
+          style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 10px; color: #1e3a8a; font-weight: 600;">
+          🔍 Faire une recherche globale (toutes catégories)
+        </a>
+      </div>
     </div>
 
-    <div class="search-input-wrapper">
-      <input class="input" id="search-input" placeholder="Tapez un nom, une épreuve ou un résultat..." type="text" />
-      <button class="clear-search-button" id="clear-search-button" type="button" aria-label="Effacer la recherche"
-        style="display: none;">
-        &times;
-      </button>
+    <div class="report-button-container">
+      <button class="form-button" id="btn-report-global" type="button">Signaler un record pour cette catégorie</button>
     </div>
-    <div>
-      <a href="recherche.html"
-        style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 10px; color: #1e3a8a; font-weight: 600;">
-        🔍 Faire une recherche globale (toutes catégories)
-      </a>
-    </div>
-  </div>
 
-  <div class="report-button-container">
-    <button class="form-button" id="btn-report-global" type="button">Signaler un record pour cette catégorie</button>
-  </div>
+    <section id="main-records-section" class="active-section">
+      <h2 id="current-category-title">Chargement...</h2>
+      <table id="records-table">
+        <thead>
+          <tr>
+            <th colspan="4" scope="col">Garçons</th>
+            <th colspan="4" scope="col">Filles</th>
+          </tr>
+          <tr>
+            <th scope="col">Epreuve</th>
+            <th scope="col">Nom Prénom</th>
+            <th scope="col">Résultat</th>
+            <th scope="col">Année</th>
+            <th scope="col">Epreuve</th>
+            <th scope="col">Nom Prénom</th>
+            <th scope="col">Résultat</th>
+            <th scope="col">Année</th>
+          </tr>
+        </thead>
+        <tbody id="records-tbody"></tbody>
+      </table>
+      <p class="empty-state" id="empty-state-msg" style="display:none;">❌ Aucun record ne correspond à votre recherche
+        dans cette catégorie.</p>
+    </section>
 
-  <section id="main-records-section" class="active-section">
-    <h2 id="current-category-title">Chargement...</h2>
-    <table id="records-table">
-      <thead>
-        <tr>
-          <th colspan="4" scope="col">Garçons</th>
-          <th colspan="4" scope="col">Filles</th>
-        </tr>
-        <tr>
-          <th scope="col">Epreuve</th>
-          <th scope="col">Nom Prénom</th>
-          <th scope="col">Résultat</th>
-          <th scope="col">Année</th>
-          <th scope="col">Epreuve</th>
-          <th scope="col">Nom Prénom</th>
-          <th scope="col">Résultat</th>
-          <th scope="col">Année</th>
-        </tr>
-      </thead>
-      <tbody id="records-tbody"></tbody>
-    </table>
-    <p class="empty-state" id="empty-state-msg" style="display:none;">❌ Aucun record ne correspond à votre recherche
-      dans cette catégorie.</p>
-  </section>
   </main>
 
   <footer>
@@ -103,7 +107,7 @@
       <h3 id="modal-title">Signaler un record</h3>
       <div class="success-message" style="display: none;">
         <h4>✅ Envoi du record initié !</h4>
-        <p>Veuillez finaliser l'envoi en cliquant sur **"Envoyer"** dans votre logiciel de messagerie.</p>
+        <p>Veuillez finaliser l'envoi en cliquant sur <strong>« Envoyer »</strong> dans votre logiciel de messagerie.</p>
         <div class="modal-actions"><button class="form-button" id="btn-success-close" type="button">Fermer</button>
         </div>
       </div>

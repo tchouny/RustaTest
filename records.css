@@ -418,6 +418,25 @@ tbody tr td:nth-child(4) {
 }
 
 
+/* Badge de comptage de résultats */
+.result-count {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.result-count--found {
+  background-color: #dbeafe;
+  color: #1e3a8a;
+}
+
+.result-count--empty {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
 /* Style pour le surlignage des termes de recherche (BLEU CLAIR) */
 .highlight {
   background-color: #cce5ff;
@@ -443,6 +462,11 @@ tbody tr td:nth-child(4) {
   /* AJOUTÉ POUR CONSISTANCE */
 }
 
+.form-button:hover {
+  background: #2d4fad; /* légèrement plus clair que --primary */
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+}
+
 .form-button:active {
   transform: translateY(1px);
 }
@@ -456,7 +480,7 @@ footer {
   color: var(--gray);
   text-align: center;
   padding: 30px 20px;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   margin-top: 40px;
 }
 
@@ -530,6 +554,7 @@ select {
   border: 1px solid var(--gray);
   border-radius: 6px;
   font-size: 0.95rem;
+  font-family: inherit; /* hérite de la police Inter du body */
 }
 
 textarea {
@@ -603,15 +628,9 @@ textarea {
   table {
     display: block;
     overflow-x: auto;
-  }
-
-  /* Ajout du fondu sur le côté droit pour indiquer le défilement */
-  /* On utilise le max-width pour éviter d'appliquer cette règle sur les grands écrans */
-  @media (max-width: 1400px) {
-    main table {
-      -webkit-mask-image: linear-gradient(to right, black 95%, transparent);
-      mask-image: linear-gradient(to right, black 95%, transparent);
-    }
+    /* Fondu sur le côté droit pour indiquer le défilement */
+    -webkit-mask-image: linear-gradient(to right, black 92%, transparent);
+    mask-image: linear-gradient(to right, black 92%, transparent);
   }
 
   /* Pour les cellules, nous permettons l'enveloppement du texte à nouveau */

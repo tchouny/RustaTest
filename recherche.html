@@ -5,22 +5,32 @@
   <meta content="width=device-width,initial-scale=1" name="viewport" />
   <title>RUSTA - Recherche Globale</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
-  <link href="records.css" rel="stylesheet" /> </head>
+  <link href="records.css" rel="stylesheet" />
+</head>
 <body id="top">
   <header>
     <div class="title">RUSTA - Recherche Globale</div>
     <nav>
-      <a href="index.html" style="color: white; text-decoration: none; font-weight: 600;">
-        &larr; Retour page records du club
+      <!-- Lien cohérent : pointe vers records.html, pas index.html -->
+      <a href="records.html" style="color: white; text-decoration: none; font-weight: 600;">
+        &larr; Retour aux records du club
       </a>
     </nav>
   </header>
 
   <main id="content">
     <div class="search-container">
-      <label for="global-search-input">Rechercher un nom, une épreuve ou une année :</label>
-      <div class="search-input-wrapper" style="display: flex; gap: 10px;">
-        <input class="input" id="global-search-input" placeholder="Ex: Poids, Dupont, 2025 ..." type="text" style="flex: 1;" />
+      <div class="search-header">
+        <label for="global-search-input">Rechercher un nom, une épreuve ou une année :</label>
+        <span id="global-result-count" class="result-count" style="display:none;"></span>
+      </div>
+      <div class="search-input-wrapper">
+        <input class="input" id="global-search-input"
+          placeholder="Ex: Poids, Dupont, 2025 … (ou appuyez sur /)"
+          type="text"
+          style="flex: 1;" />
+        <button class="clear-search-button" id="clear-global-search" type="button"
+          aria-label="Effacer la recherche" style="display:none;">&times;</button>
       </div>
     </div>
 
