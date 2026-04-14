@@ -418,7 +418,7 @@ tbody tr td:nth-child(4) {
 }
 
 
-/* Badge de comptage de résultats */
+/* Badge de comptage de résultats de recherche */
 .result-count {
   font-size: 0.8rem;
   font-weight: 700;
@@ -463,12 +463,22 @@ tbody tr td:nth-child(4) {
 }
 
 .form-button:hover {
-  background: #2d4fad; /* légèrement plus clair que --primary */
-  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.25);
+  background: #2d4fad;
+  box-shadow: 0 2px 8px rgba(30, 58, 138, 0.3);
 }
 
 .form-button:active {
   transform: translateY(1px);
+}
+
+/* Variante secondaire (bouton Annuler) */
+.secondary-button {
+  background: #6b7280;
+}
+
+.secondary-button:hover {
+  background: #4b5563;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 /* ----------------------------------------------- */
@@ -624,11 +634,10 @@ textarea {
     padding: 10px 12px;
   }
 
-  /* TABLEAU MOBILE : Défilement horizontal pour ne pas couper les colonnes */
+  /* TABLEAU MOBILE : Défilement horizontal + fondu sur le bord droit */
   table {
     display: block;
     overflow-x: auto;
-    /* Fondu sur le côté droit pour indiquer le défilement */
     -webkit-mask-image: linear-gradient(to right, black 92%, transparent);
     mask-image: linear-gradient(to right, black 92%, transparent);
   }

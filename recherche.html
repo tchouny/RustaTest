@@ -4,16 +4,15 @@
   <meta charset="utf-8" />
   <meta content="width=device-width,initial-scale=1" name="viewport" />
   <title>RUSTA - Recherche Globale</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link href="records.css" rel="stylesheet" />
 </head>
 <body id="top">
   <header>
     <div class="title">RUSTA - Recherche Globale</div>
     <nav>
-      <!-- Lien cohérent : pointe vers records.html, pas index.html -->
-      <a href="records.html" style="color: white; text-decoration: none; font-weight: 600;">
-        &larr; Retour aux records du club
+      <a href="records.html" style="color:white;text-decoration:none;font-weight:600;">
+        ← Retour aux records du club
       </a>
     </nav>
   </header>
@@ -26,9 +25,7 @@
       </div>
       <div class="search-input-wrapper">
         <input class="input" id="global-search-input"
-          placeholder="Ex: Poids, Dupont, 2025 … (ou appuyez sur /)"
-          type="text"
-          style="flex: 1;" />
+          placeholder="Ex : Poids, Dupont, 2025… (ou appuyez sur /)" type="text" />
         <button class="clear-search-button" id="clear-global-search" type="button"
           aria-label="Effacer la recherche" style="display:none;">&times;</button>
       </div>
@@ -41,7 +38,7 @@
           <tr>
             <th scope="col">Catégorie</th>
             <th scope="col">Genre</th>
-            <th scope="col">Epreuve</th>
+            <th scope="col">Épreuve</th>
             <th scope="col">Nom Prénom</th>
             <th scope="col">Résultat</th>
             <th scope="col">Année</th>
@@ -49,7 +46,7 @@
         </thead>
         <tbody id="results-tbody">
           <tr>
-            <td colspan="6" style="text-align:center; padding: 40px; color: #666;">
+            <td colspan="6" style="text-align:center;padding:40px;color:#666;">
               Entrez un mot-clé ci-dessus pour lancer la recherche globale.
             </td>
           </tr>
@@ -59,7 +56,7 @@
   </main>
 
   <footer>
-    <p class="footer-text">&copy; 2025 RUSTA - Outil de recherche globale</p>
+    <p class="footer-text">&copy; 2025 RUSTA — Outil de recherche globale</p>
   </footer>
 
   <script src="global-search.js"></script>

@@ -5,10 +5,8 @@
   <meta charset="utf-8" />
   <meta content="width=device-width,initial-scale=1" name="viewport" />
   <meta name="robots" content="noindex">
-  <title>
-    RUSTA - Records du club
-  </title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
+  <title>RUSTA - Records Masters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <link href="records.css" rel="stylesheet" />
 </head>
 
@@ -40,25 +38,33 @@
     </nav>
   </header>
 
- <div class="search-container">
-  <div class="search-header">
-    <label for="search-input" style="font-family: 'Inter', sans-serif; font-size: 14px; color: #1e3a8a; margin-bottom: 0;">
-      Rechercher dans la catégorie : <span id="current-category-name" style="font-weight: 800;"></span>
-    </label>
-  </div>
+  <main id="content">
 
-  <div class="search-input-wrapper">
-    <input class="input" id="search-input" placeholder="Tapez un nom, une épreuve ou un résultat..." type="text" />
-    <button class="clear-search-button" id="clear-search-button" type="button" aria-label="Effacer la recherche" style="display: none;">
-      &times;
-    </button>
-  </div>
-  <div>
-      <a href="recherche_masters.html" style="text-decoration: none; font-family: 'Inter', sans-serif; font-size: 10px; color: #1e3a8a; font-weight: 600;">
-      🔍 Faire une recherche globale (toutes catégories masters)
-    </a>
-  </div>
-</div>
+    <div class="search-container">
+      <div class="search-header">
+        <label for="search-input" style="font-family:'Inter',sans-serif;font-size:14px;color:#1e3a8a;margin-bottom:0;">
+          Rechercher dans la catégorie : <span id="current-category-name" style="font-weight:800;"></span>
+        </label>
+        <span id="result-count" class="result-count" style="display:none;"></span>
+      </div>
+      <div class="search-input-wrapper">
+        <input class="input" id="search-input"
+          placeholder="Nom, épreuve, résultat… (ou appuyez sur /)" type="text" />
+        <button class="clear-search-button" id="clear-search-button" type="button"
+          aria-label="Effacer la recherche" style="display:none;">&times;</button>
+      </div>
+      <div style="margin-top:8px;">
+        <a href="recherche_masters.html"
+          style="text-decoration:none;font-family:'Inter',sans-serif;font-size:11px;color:#1e3a8a;font-weight:600;">
+          🔍 Recherche globale (toutes catégories masters)
+        </a>
+        &nbsp;|&nbsp;
+        <a href="index.html"
+          style="text-decoration:none;font-family:'Inter',sans-serif;font-size:11px;color:#1e3a8a;font-weight:600;">
+          ← Accueil
+        </a>
+      </div>
+    </div>
 
     <div class="report-button-container">
       <button class="form-button" id="btn-report-global" type="button">
@@ -66,135 +72,112 @@
       </button>
     </div>
 
-        <section id="main-records-section" class="active-section">
+    <section id="main-records-section" class="active-section">
       <h2 id="current-category-title">Chargement...</h2>
       <table id="records-table">
         <thead>
           <tr>
-            <th colspan="4" scope="col">Garçons</th>
-            <th colspan="4" scope="col">Filles</th>
+            <th colspan="4" scope="col">Hommes</th>
+            <th colspan="4" scope="col">Dames</th>
           </tr>
           <tr>
-            <th scope="col">Epreuve</th><th scope="col">Nom Prénom</th><th scope="col">Résultat</th><th scope="col">Année</th>
-            <th scope="col">Epreuve</th><th scope="col">Nom Prénom</th><th scope="col">Résultat</th><th scope="col">Année</th>
+            <th scope="col">Épreuve</th>
+            <th scope="col">Nom Prénom</th>
+            <th scope="col">Résultat</th>
+            <th scope="col">Année</th>
+            <th scope="col">Épreuve</th>
+            <th scope="col">Nom Prénom</th>
+            <th scope="col">Résultat</th>
+            <th scope="col">Année</th>
           </tr>
         </thead>
         <tbody id="records-tbody"></tbody>
       </table>
-      <p class="empty-state" id="empty-state-msg" style="display:none;">❌ Aucun record ne correspond à votre recherche dans cette catégorie.</p>
+      <p class="empty-state" id="empty-state-msg" style="display:none;">
+        ❌ Aucun record ne correspond à votre recherche dans cette catégorie.
+      </p>
     </section>
+
   </main>
 
   <footer>
-    <p>
-      &copy; 2025 RUSTA. Tous droits r&eacute;serv&eacute;s.
-      |
-      <a href="mailto:laurentduthoo@gmail.com">Contact</a>
-      | Mise à jour: 15 Janvier 2026
+    <p class="footer-text">
+      &copy; 2025 RUSTA. Tous droits réservés. |
+      <a href="mailto:laurentduthoo@gmail.com">Contact</a> |
+      Mise à jour : 15 janvier 2026
     </p>
     <a class="back-to-top" href="#top">Retour en haut &uarr;</a>
   </footer>
 
+  <!-- MODALE SIGNALEMENT -->
   <div aria-hidden="true" class="modal-backdrop" id="modal-root">
     <div aria-labelledby="modal-title" aria-modal="true" class="modal" role="dialog">
-      <h3 id="modal-title">
-        Signaler un record
-      </h3>
-
-      <div class="success-message" style="display: none;">
+      <h3 id="modal-title">Signaler un record</h3>
+      <div class="success-message" style="display:none;">
         <h4>✅ Envoi du record initié !</h4>
-        <p>Veuillez finaliser l'envoi en cliquant sur **"Envoyer"** dans la nouvelle fenêtre de votre logiciel de
-          messagerie (Outlook, Gmail, Mail, etc.).</p>
+        <p>Veuillez finaliser l'envoi en cliquant sur <strong>« Envoyer »</strong> dans votre logiciel de messagerie.</p>
         <p>Merci pour votre contribution !</p>
         <div class="modal-actions">
           <button class="form-button" id="btn-success-close" type="button">Fermer</button>
         </div>
       </div>
-
       <form id="report-form">
         <input id="form-category" name="category" type="hidden" value="" />
         <div class="form-row">
           <div class="col">
-            <label for="type">
-              Indoor/Outdoor
-            </label>
+            <label for="type">Indoor / Outdoor</label>
             <select class="input" id="type" name="type">
-              <option value="indoor">
-                Indoor
-              </option>
-              <option value="outdoor">
-                Outdoor
-              </option>
+              <option value="indoor">Indoor</option>
+              <option value="outdoor">Outdoor</option>
             </select>
           </div>
           <div class="col">
-            <label for="gender">
-              Hommes/Dames
-            </label>
+            <label for="gender">Hommes / Dames</label>
             <select class="input" id="gender" name="gender">
-              <option value="Hommes">
-                Hommes
-              </option>
-              <option value="Dames">
-                Dames
-              </option>
+              <option value="Hommes">Hommes</option>
+              <option value="Dames">Dames</option>
             </select>
           </div>
         </div>
         <div>
-          <label for="epreuve">
-            Epreuve
-          </label>
-          <input class="input" id="epreuve" name="epreuve" required="" />
+          <label for="epreuve">Épreuve</label>
+          <input class="input" id="epreuve" name="epreuve" required />
         </div>
         <div class="form-row">
           <div class="col">
-            <label for="nom">
-              Nom Prénom
-            </label>
-            <input class="input" id="nom" name="nom" required="" />
+            <label for="nom">Nom Prénom</label>
+            <input class="input" id="nom" name="nom" required />
           </div>
           <div class="col">
-            <label for="annee">
-              Année de la perf.
-            </label>
-            <input class="input" id="annee" inputmode="numeric" name="annee" pattern="\d{4}" placeholder="YYYY"
-              required="" />
+            <label for="annee">Année de la perf.</label>
+            <input class="input" id="annee" inputmode="numeric" name="annee"
+              pattern="\d{4}" placeholder="YYYY" required />
           </div>
         </div>
         <div class="form-row">
           <div class="col">
-            <label for="resultat">
-              Résultat
-            </label>
-            <input class="input" id="resultat" name="resultat" required="" />
+            <label for="resultat">Résultat</label>
+            <input class="input" id="resultat" name="resultat" required />
           </div>
           <div class="col">
-            <label for="lieu">
-              Lieu
-            </label>
-            <input class="input" id="lieu" name="lieu" required="" />
+            <label for="lieu">Lieu</label>
+            <input class="input" id="lieu" name="lieu" required />
           </div>
         </div>
         <div>
-          <label for="comment">
-            Commentaire (optionnel)
-          </label>
+          <label for="comment">Commentaire (optionnel)</label>
           <textarea id="comment" name="comment"></textarea>
         </div>
         <div class="modal-actions">
-          <button class="form-button" id="btn-cancel" type="button">
-            Annuler
-          </button>
-          <button class="form-button" type="submit">
-            Envoyer par email
-          </button>
+          <button class="form-button secondary-button" id="btn-cancel" type="button">Annuler</button>
+          <button class="form-button" type="submit">Envoyer par email</button>
         </div>
       </form>
     </div>
   </div>
-<script>window.DATA_SOURCE = 'recordsmasters.json';</script>
-    <script src="records.js"></script>
+
+  <script>window.DATA_SOURCE = 'recordsmasters.json';</script>
+  <script src="records.js"></script>
 </body>
 
 </html>

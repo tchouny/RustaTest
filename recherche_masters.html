@@ -3,24 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width,initial-scale=1" name="viewport" />
-  <title>RUSTA - Recherche Globale</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&amp;display=swap" rel="stylesheet" />
-  <link href="records.css" rel="stylesheet" /> </head>
+  <title>RUSTA - Recherche Globale Masters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="records.css" rel="stylesheet" />
+</head>
 <body id="top">
   <header>
     <div class="title">RUSTA - Recherche Globale Masters</div>
     <nav>
-      <a href="imasters.html" style="color: white; text-decoration: none; font-weight: 600;">
-        &larr; Retour page records du club masters
+      <a href="imasters.html" style="color:white;text-decoration:none;font-weight:600;">
+        ← Retour aux records masters
       </a>
     </nav>
   </header>
 
   <main id="content">
     <div class="search-container">
-      <label for="global-search-input">Rechercher un nom, une épreuve ou une année :</label>
-      <div class="search-input-wrapper" style="display: flex; gap: 10px;">
-        <input class="input" id="global-search-input" placeholder="Ex: Poids, Dupont, 2025 ..." type="text" style="flex: 1;" />
+      <div class="search-header">
+        <label for="global-search-input">Rechercher un nom, une épreuve ou une année :</label>
+        <span id="global-result-count" class="result-count" style="display:none;"></span>
+      </div>
+      <div class="search-input-wrapper">
+        <input class="input" id="global-search-input"
+          placeholder="Ex : Poids, Dupont, 2025… (ou appuyez sur /)" type="text" />
+        <button class="clear-search-button" id="clear-global-search" type="button"
+          aria-label="Effacer la recherche" style="display:none;">&times;</button>
       </div>
     </div>
 
@@ -31,7 +38,7 @@
           <tr>
             <th scope="col">Catégorie</th>
             <th scope="col">Genre</th>
-            <th scope="col">Epreuve</th>
+            <th scope="col">Épreuve</th>
             <th scope="col">Nom Prénom</th>
             <th scope="col">Résultat</th>
             <th scope="col">Année</th>
@@ -39,7 +46,7 @@
         </thead>
         <tbody id="results-tbody">
           <tr>
-            <td colspan="6" style="text-align:center; padding: 40px; color: #666;">
+            <td colspan="6" style="text-align:center;padding:40px;color:#666;">
               Entrez un mot-clé ci-dessus pour lancer la recherche globale.
             </td>
           </tr>
@@ -49,7 +56,7 @@
   </main>
 
   <footer>
-    <p class="footer-text">&copy; 2025 RUSTA - Outil de recherche globale</p>
+    <p class="footer-text">&copy; 2025 RUSTA — Outil de recherche globale Masters</p>
   </footer>
 
   <script src="global-search-masters.js"></script>
